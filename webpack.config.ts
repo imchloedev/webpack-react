@@ -3,6 +3,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const prod = process.env.REACT_APP_NODE_ENV === 'production';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: './public/index.html',
+  }),
+  new CleanWebpackPlugin(),
+  new webpack.HotModuleReplacementPlugin(),
+];
+
+if (prod) {
+  plugins.push(
+    new MiniCssExtractPlugin({
+      filename: 'common.css',
+    })
+  );
+}
 
 module.exports = {
   mode: prod ? 'production' : 'development',
@@ -13,7 +30,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
+  plugins,
   module: {
     rules: [
       {
@@ -23,17 +42,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          prod ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+        ],
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-    new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+
   devServer: {
     historyApiFallback: true,
     port: 8080,
