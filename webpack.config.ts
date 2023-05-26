@@ -42,6 +42,8 @@ module.exports = (env: any) => {
               loader: 'url-loader',
               options: {
                 limit: 8192,
+                outputPath: 'images/',
+                publicPath: '/public',
               },
             },
           ],
@@ -52,6 +54,10 @@ module.exports = (env: any) => {
           use: [
             {
               loader: 'file-loader',
+              options: {
+                outputPath: 'fonts/',
+                publicPath: '/public',
+              },
             },
           ],
         },
@@ -68,11 +74,9 @@ module.exports = (env: any) => {
         patterns: [
           {
             from: 'public/fonts',
-            to: 'public/fonts',
           },
           {
             from: 'public/images',
-            to: 'public/images',
           },
         ],
       }),

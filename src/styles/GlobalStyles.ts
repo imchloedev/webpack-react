@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'NanumSquareNeo';
     font-weight: 300;
     font-style: normal;
-    src: url('./public/fonts/NanumSquareNeo-bRg.ttf') format('truetype');
+    src: url('./fonts/NanumSquareNeo-bRg.ttf') format('truetype');
     font-display: swap;
   }
 
