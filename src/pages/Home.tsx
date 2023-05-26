@@ -1,13 +1,18 @@
 import React from 'react';
-import '../css/Home.css';
-import Button from './Button';
+// import '../css/Home.css';
+import Button from '../components/Button';
 
 const Home = () => {
   console.log('webpack test');
   return (
     <div>
-      Home
-      <Button />
+      <h2>Home</h2>
+      <Button>
+        <div>
+          HTML
+          <img src="images/1126012.png" />
+        </div>
+      </Button>
     </div>
   );
 };

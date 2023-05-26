@@ -33,6 +33,27 @@ module.exports = (env: any) => {
             'css-loader',
           ],
         },
+        // 이미지 로더
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+              },
+            },
+          ],
+        },
+        // 폰트 로더
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            },
+          ],
+        },
       ],
     },
     plugins: [
