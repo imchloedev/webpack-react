@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env: any) => {
   const isProd = env.production === true;
@@ -14,7 +15,7 @@ module.exports = (env: any) => {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }, // 확장자나 경로를 알아서 처리할 수 있도록 설정
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'build'),
       filename: 'bundle.js',
       publicPath: '/', //가상경로
     },
@@ -59,10 +60,23 @@ module.exports = (env: any) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './public/index.html',
+        filename: 'index.html',
       }),
       new CleanWebpackPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new MiniCssExtractPlugin({ filename: 'app.css' }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: 'public/fonts',
+            to: 'public/fonts',
+          },
+          {
+            from: 'public/images',
+            to: 'public/images',
+          },
+        ],
+      }),
     ],
     devServer: {
       historyApiFallback: true,
