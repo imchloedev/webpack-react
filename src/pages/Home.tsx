@@ -10,7 +10,7 @@ const Home = () => {
       <Button>
         <div>
           HTML
-          <img src="images/1126012.png" />
+          <img src="./public/images/1126012.png" />
         </div>
       </Button>
     </div>

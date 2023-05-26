@@ -17,7 +17,7 @@ module.exports = (env: any) => {
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: 'bundle.js',
-      publicPath: '/', //가상경로
+      publicPath: '/',
     },
     module: {
       rules: [
@@ -60,7 +60,6 @@ module.exports = (env: any) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './public/index.html',
-        filename: 'index.html',
       }),
       new CleanWebpackPlugin(),
       new webpack.HotModuleReplacementPlugin(),
