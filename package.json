@@ -2,14 +2,12 @@
   "name": "webpack-react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "homepage": ".",
   "scripts": {
     "dev": "webpack serve --open --mode development",
     "start": "webpack --env development --mode development",
     "build": "webpack --env production --mode production"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
