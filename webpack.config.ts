@@ -16,7 +16,7 @@ module.exports = (env: any) => {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
-      publicPath: '/dist/', //가상경로
+      publicPath: '/', //가상경로
     },
     module: {
       rules: [
@@ -68,7 +68,6 @@ module.exports = (env: any) => {
       historyApiFallback: true,
       port: 8080,
       hot: true,
-      publicPath: '/dist/',
     },
   };
 };
