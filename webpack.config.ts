@@ -38,7 +38,7 @@ module.exports = (env: any) => {
             {
               loader: isProd ? MiniCssExtractPlugin.loader : 'style-loader',
             },
-            { loader: 'css-loader', options: { outputPath: 'css' } },
+            { loader: 'css-loader' },
           ],
         },
         // 이미지 로더
@@ -62,7 +62,7 @@ module.exports = (env: any) => {
             {
               loader: 'file-loader',
               options: {
-                outputPath: 'media/',
+                outputPath: 'static/media',
               },
             },
           ],
@@ -84,7 +84,7 @@ module.exports = (env: any) => {
       }),
       new CleanWebpackPlugin(),
       new webpack.HotModuleReplacementPlugin(),
-      new MiniCssExtractPlugin({ filename: 'app.css' }),
+      new MiniCssExtractPlugin({ filename: 'static/css/app.css' }),
       new CopyWebpackPlugin({
         patterns: [
           {

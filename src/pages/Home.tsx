@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../css/Home.css';
+import '../styles/Home.css';
 import Button from '@src/components/Button';
 import JavaScript from '@src/assets/5968292.png'; // img from assets
 
