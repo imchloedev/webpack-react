@@ -1,6 +1,7 @@
 import React from 'react';
 // import '../css/Home.css';
-import Button from '../components/Button';
+import Button from '@src/components/Button';
+import JavaScript from '@src/assets/5968292.png'; // img from assets
 
 const Home = () => {
   console.log('webpack test');
@@ -11,6 +12,12 @@ const Home = () => {
         <div>
           HTML
           <img src="./images/1126012.png" />
+        </div>
+      </Button>
+      <Button>
+        <div>
+          JavaScript
+          <img src={JavaScript} />
         </div>
       </Button>
     </div>

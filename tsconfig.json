@@ -19,5 +19,5 @@
     }
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "src/index.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "src/index.tsx", "src/types/images.d.ts"]
 }
