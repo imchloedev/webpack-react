@@ -31,16 +31,16 @@ module.exports = (env: any) => {
           use: ['babel-loader', 'ts-loader'],
           exclude: ['/node_modules'],
         },
-        {
-          test: /\.css$/i,
-          sideEffects: true,
-          use: [
-            {
-              loader: isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-            },
-            { loader: 'css-loader' },
-          ],
-        },
+        // {
+        //   test: /\.css$/i,
+        //   sideEffects: true,
+        //   use: [
+        //     {
+        //       loader: isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+        //     },
+        //     { loader: 'css-loader' },
+        //   ],
+        // },
         // 이미지 로더
         // {
         //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -63,6 +63,7 @@ module.exports = (env: any) => {
               loader: 'file-loader',
               options: {
                 outputPath: 'static/media',
+                name: '[name].[ext]',
               },
             },
           ],
